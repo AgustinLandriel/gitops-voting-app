@@ -14,17 +14,36 @@ spec:
     spec:
       containers:
         - name: result
-          image: agustindev/result:1.0
+          image: agustindev/result:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
           ports:
             - containerPort: 3000
           env:
             - name: APP_PORT
               value: "3000"
             - name: DATABASE_HOST
-              value: "database"
+              valueFrom:
+                configMapKeyRef:
+                  name: host-config
+                  key: DATABASE_HOST
             - name: DATABASE_USER
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
             - name: DATABASE_PASSWORD
-              value: "postgres"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
             - name: DATABASE_NAME
-              value: "votes"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_DB
