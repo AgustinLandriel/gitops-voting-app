@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: result
-          image: agustindev/result:latest
+          image: agustindev/app-result:latest
           resources:
             limits:
               memory: "128Mi"

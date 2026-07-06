@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: worker
-          image: agustindev/worker:latest
+          image: agustindev/app-worker:latest
           ports:
             - containerPort: 3000
           resources:

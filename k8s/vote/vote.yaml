@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-deployment
+  name: app-vote-deployment
 spec:
   replicas: 2
   selector:
     matchLabels: # "yo gestiono los Pods con esta etiqueta"
-      app: flask-app
+      app: app-vote
   template:
     metadata:
       labels:
-        app: flask-app # "los Pods que creo llevan esta etiqueta"
+        app: app-vote # "los Pods que creo llevan esta etiqueta"
     spec:
       containers:
-        - name: flask-container
+        - name: app-vote
           image: agustindev/app-vote:latest
           ports:
             - containerPort: 80
