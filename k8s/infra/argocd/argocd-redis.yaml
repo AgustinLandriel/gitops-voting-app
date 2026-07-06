@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: voting-app-redis
-  namespace: voting-app
+  namespace: argo-cd
 spec:
   project: default
   source:
@@ -11,7 +11,7 @@ spec:
     path: k8s/redis
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: voting-app
   syncPolicy:
     automated:
       prune: true
