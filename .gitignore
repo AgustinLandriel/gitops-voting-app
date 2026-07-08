@@ -1,3 +1,6 @@
 aws-keys.yaml
 secret.yaml
 rol-serviceAccount-postgres.yaml
+.github/workflows/ci-worker-minikube.yaml
+.github/workflows/ci-result-minikube.yaml
+.github/workflows/ci-vote-minikube.yaml
