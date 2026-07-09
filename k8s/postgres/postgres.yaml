@@ -20,7 +20,9 @@ spec:
                 name: host-config
             - secretRef:
                 name: postgres-secret
-
+          env:
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
           # env:
           #   - name: POSTGRES_USER
           #     valueFrom:

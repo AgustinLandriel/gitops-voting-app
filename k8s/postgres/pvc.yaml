@@ -13,6 +13,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: postgres-pvc
 spec:
+  storageClassName: ebs-sc # el tipo de disco que quiero (gp2 = SSD)
   accessModes:
     - ReadWriteOnce # un solo nodo puede escribir
   resources:
