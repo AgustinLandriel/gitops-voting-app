@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: result
-          image: agustindev/app-result:005934083724f58e2f126bf68376c04d6bd657bf
+          image: 325503636955.dkr.ecr.us-east-2.amazonaws.com/voting-app/result:2023bc5032ceed478122b394e8079765139ff43d
           resources:
             limits:
               memory: "128Mi"
